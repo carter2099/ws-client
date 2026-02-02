@@ -1,12 +1,12 @@
 #!/usr/bin/env ruby
 $:.unshift File.expand_path '../lib', File.dirname(__FILE__)
-require 'websocket-client-simple'
+require 'ws_client'
 
-puts "websocket-client-simple v#{WebSocket::Client::Simple::VERSION}"
+puts "ws-client v#{WSClient::VERSION}"
 
 url = ARGV.shift || 'ws://localhost:8080'
 
-ws = WebSocket::Client::Simple.connect url
+ws = WSClient.connect url
 
 ws.on :message do |msg|
   puts ">> #{msg.data}"

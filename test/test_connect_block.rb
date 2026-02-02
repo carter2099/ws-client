@@ -1,6 +1,6 @@
 require File.expand_path 'test_helper', File.dirname(__FILE__)
 
-class TestWebSocketClientSimple < Minitest::Test
+class TestWSClient < Minitest::Test
 
   def test_onopen
 
@@ -11,7 +11,7 @@ class TestWebSocketClientSimple < Minitest::Test
       res = nil
 
       EM::add_timer 1 do
-        WebSocket::Client::Simple.connect EchoServer.url do |client|
+        WSClient.connect EchoServer.url do |client|
           client.on :open do
             client.send "hello world"
           end

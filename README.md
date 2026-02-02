@@ -13,9 +13,9 @@ Installation
 Usage
 -----
 ```ruby
-require 'websocket-client-simple'
+require 'ws_client'
 
-ws = WebSocket::Client::Simple.connect 'ws://example.com:8888'
+ws = WSClient.connect 'ws://example.com:8888'
 
 ws.on :message do |msg|
   puts msg.data
@@ -42,7 +42,7 @@ end
 `connect` runs a given block before connecting websocket
 
 ```ruby
-WebSocket::Client::Simple.connect 'ws://example.com:8888' do |ws|
+WSClient.connect 'ws://example.com:8888' do |ws|
   ws.on :open do
     puts "connect!"
   end
@@ -61,7 +61,7 @@ Pass a custom `OpenSSL::SSL::SSLContext` for full control over TLS settings:
 ctx = OpenSSL::SSL::SSLContext.new
 ctx.verify_mode = OpenSSL::SSL::VERIFY_PEER
 
-ws = WebSocket::Client::Simple.connect 'wss://example.com', ssl_context: ctx
+ws = WSClient.connect 'wss://example.com', ssl_context: ctx
 ```
 
 By default, `OP_IGNORE_UNEXPECTED_EOF` is enabled on OpenSSL 3.x to prevent `SSL_read: unexpected eof while reading` errors when servers close connections without a TLS `close_notify` alert.

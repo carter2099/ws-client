@@ -1,6 +1,6 @@
 require_relative 'test_helper'
 
-class TestWebSocketClientSimple < Minitest::Test
+class TestWSClient < Minitest::Test
 
   def test_echo
     msgs = ['foo','bar','baz']
@@ -12,8 +12,8 @@ class TestWebSocketClientSimple < Minitest::Test
 
       ## client1 --> server --> client2
       EM::add_timer 1 do
-        client1 = WebSocket::Client::Simple.connect EchoServer.url
-        client2 = WebSocket::Client::Simple.connect EchoServer.url
+        client1 = WSClient.connect EchoServer.url
+        client2 = WSClient.connect EchoServer.url
         assert_equal client1.open?, false
         assert_equal client2.open?, false
 

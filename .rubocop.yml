@@ -1,0 +1,55 @@
+AllCops:
+  TargetRubyVersion: 3.4
+  NewCops: enable
+  SuggestExtensions: false
+  Exclude:
+    - 'test/**/*'
+    - 'sample/**/*'
+
+# The upstream code style uses hash rockets and other conventions we preserve
+Style/HashSyntax:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 60
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'lib/ws_client/client.rb'
+    - '*.gemspec'
+
+Gemspec/DevelopmentDependencies:
+  Enabled: false
+
+# The connect method is inherently complex (socket, SSL, handshake, read thread)
+Metrics/AbcSize:
+  Exclude:
+    - 'lib/ws_client/client.rb'
+
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - 'lib/ws_client/client.rb'
+
+Metrics/PerceivedComplexity:
+  Exclude:
+    - 'lib/ws_client/client.rb'
+
+# The two rescue branches for EPIPE and SSLError intentionally do the same thing
+Lint/DuplicateBranch:
+  Exclude:
+    - 'lib/ws_client/client.rb'
+
+Layout/LineLength:
+  Max: 120
