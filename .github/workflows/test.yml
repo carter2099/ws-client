@@ -8,34 +8,20 @@ on:
   pull_request:
 
 jobs:
-  lint:
+  build:
     runs-on: ubuntu-latest
-    name: Lint
+    name: Ruby ${{ matrix.ruby }}
+    strategy:
+      matrix:
+        ruby:
+          - '3.4.3'
+
     steps:
       - uses: actions/checkout@v4
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.4.3'
-          bundler-cache: true
-      - name: Run RuboCop
-        run: bundle exec rake rubocop
-
-  test:
-    runs-on: ubuntu-24.04
-    name: Test (Ruby ${{ matrix.ruby }})
-    strategy:
-      matrix:
-        ruby:
-          - '3.4'
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ruby/setup-ruby@v1
-        with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
-      - name: Run tests
-        run: bundle exec rake test
-        timeout-minutes: 2
-        env:
-          WS_PORT: 18080
+      - name: Run the default task
+        run: bundle exec rake
