@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.10.1
+
+* No-op version to sync GitHub workflows and RubyGems
+
 ## 0.10.0
 
 * Rename gem to `ws_lite` with `WSLite` module (successor to `websocket-client-simple`)
