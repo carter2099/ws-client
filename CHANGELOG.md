@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.0
+
+* Update metadata
+
 ## 0.10.1
 
 * No-op version to sync GitHub workflows and RubyGems

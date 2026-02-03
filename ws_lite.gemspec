@@ -6,9 +6,9 @@ require 'ws_lite/version'
 Gem::Specification.new do |spec|
   spec.name          = "ws_lite"
   spec.version       = WSLite::VERSION
-  spec.authors       = ["Sho Hashimoto", "Yusuke Nakamura"]
-  spec.email         = ["hashimoto@shokai.org", "yusuke1994525@gmail.com"]
-  spec.description   = 'Simple WebSocket Client for Ruby'
+  spec.authors       = ["carter2099"]
+  spec.email         = ["me@carter2099.com"]
+  spec.description   = 'A lightweight and configurable ruby websocket client'
   spec.summary       = spec.description
   spec.homepage      = "https://github.com/carter2099/ws_lite"
   spec.license       = "MIT"
