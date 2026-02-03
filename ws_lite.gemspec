@@ -1,23 +1,23 @@
 require 'English'
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'ws_client/version'
+require 'ws_lite/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "ws-client"
-  spec.version       = WSClient::VERSION
+  spec.name          = "ws_lite"
+  spec.version       = WSLite::VERSION
   spec.authors       = ["Sho Hashimoto", "Yusuke Nakamura"]
   spec.email         = ["hashimoto@shokai.org", "yusuke1994525@gmail.com"]
   spec.description   = 'Simple WebSocket Client for Ruby'
   spec.summary       = spec.description
-  spec.homepage      = "https://github.com/carter2099/ws-client"
+  spec.homepage      = "https://github.com/carter2099/ws_lite"
   spec.license       = "MIT"
   spec.required_ruby_version = '>= 3.4.0'
 
   if spec.respond_to?(:metadata)
     spec.metadata["homepage_uri"] = spec.homepage
     spec.metadata["source_code_uri"] = spec.homepage
-    spec.metadata["changelog_uri"] = "https://github.com/carter2099/ws-client/blob/master/CHANGELOG.md"
+    spec.metadata["changelog_uri"] = "https://github.com/carter2099/ws_lite/blob/master/CHANGELOG.md"
     spec.metadata['rubygems_mfa_required'] = 'true'
   end
 

@@ -1,12 +1,12 @@
 #!/usr/bin/env ruby
 $:.unshift File.expand_path '../lib', File.dirname(__FILE__)
-require 'ws_client'
+require 'ws_lite'
 
-puts "ws-client v#{WSClient::VERSION}"
+puts "ws_lite v#{WSLite::VERSION}"
 
 url = ARGV.shift || 'ws://localhost:8080'
 
-ws = WSClient.connect url
+ws = WSLite.connect url
 
 ws.on :message do |msg|
   puts ">> #{msg.data}"

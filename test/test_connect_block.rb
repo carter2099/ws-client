@@ -1,6 +1,6 @@
 require File.expand_path 'test_helper', File.dirname(__FILE__)
 
-class TestWSClient < Minitest::Test
+class TestWSLite < Minitest::Test
 
   def test_onopen
 
@@ -11,7 +11,7 @@ class TestWSClient < Minitest::Test
       res = nil
 
       EM::add_timer 1 do
-        WSClient.connect EchoServer.url do |client|
+        WSLite.connect EchoServer.url do |client|
           client.on :open do
             client.send "hello world"
           end

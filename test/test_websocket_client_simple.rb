@@ -1,6 +1,6 @@
 require_relative 'test_helper'
 
-class TestWSClient < Minitest::Test
+class TestWSLite < Minitest::Test
 
   def test_echo
     msgs = ['foo','bar','baz']
@@ -12,8 +12,8 @@ class TestWSClient < Minitest::Test
 
       ## client1 --> server --> client2
       EM::add_timer 1 do
-        client1 = WSClient.connect EchoServer.url
-        client2 = WSClient.connect EchoServer.url
+        client1 = WSLite.connect EchoServer.url
+        client2 = WSLite.connect EchoServer.url
         assert_equal client1.open?, false
         assert_equal client2.open?, false
 

@@ -2,7 +2,7 @@
 
 ## 0.10.0
 
-* Rename gem to `ws-client` with `WSClient` module (successor to `websocket-client-simple`)
+* Rename gem to `ws_lite` with `WSLite` module (successor to `websocket-client-simple`)
 * Fix OpenSSL 3.x compatibility: enable `OP_IGNORE_UNEXPECTED_EOF` by default so that server-side TCP closes without TLS `close_notify` are treated as clean EOF instead of raising `SSL_read: unexpected eof while reading`
 * Add `ssl_context` option to `connect` for passing a fully configured `OpenSSL::SSL::SSLContext`
 * Extract `build_ssl_context` private method for cleaner SSL setup

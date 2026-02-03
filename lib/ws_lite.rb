@@ -4,8 +4,8 @@ require 'socket'
 require 'openssl'
 require 'uri'
 
-require 'ws_client/version'
-require 'ws_client/client'
+require 'ws_lite/version'
+require 'ws_lite/client'
 
-module WSClient
+module WSLite
 end

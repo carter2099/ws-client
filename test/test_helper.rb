@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'bundler'
 require 'minitest/autorun'
-require 'ws_client'
+require 'ws_lite'
 require 'eventmachine'
 require 'websocket-eventmachine-server'
 require_relative 'echo_server'

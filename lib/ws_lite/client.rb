@@ -1,6 +1,6 @@
-module WSClient
+module WSLite
   def self.connect(url, options = {})
-    client = ::WSClient::Client.new
+    client = ::WSLite::Client.new
     yield client if block_given?
     client.connect url, options
     client

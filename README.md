@@ -1,22 +1,22 @@
-ws-client
-=========
-[![Gem Version](https://badge.fury.io/rb/ws-client.svg)](https://rubygems.org/gems/ws-client)
-[![Downloads](https://img.shields.io/gem/dt/ws-client.svg)](https://rubygems.org/gems/ws-client)
-[![CI](https://github.com/carter2099/ws-client/actions/workflows/test.yml/badge.svg)](https://github.com/carter2099/ws-client/actions)
+ws_lite
+=======
+[![Gem Version](https://badge.fury.io/rb/ws_lite.svg)](https://rubygems.org/gems/ws_lite)
+[![Downloads](https://img.shields.io/gem/dt/ws_lite.svg)](https://rubygems.org/gems/ws_lite)
+[![CI](https://github.com/carter2099/ws_lite/actions/workflows/test.yml/badge.svg)](https://github.com/carter2099/ws_lite/actions)
 
 Successor to [websocket-client-simple](https://github.com/ruby-jp/websocket-client-simple) with OpenSSL 3.x fixes and improved connection reliability.
 
 Installation
 ------------
 
-    gem install ws-client
+    gem install ws_lite
 
 Usage
 -----
 ```ruby
-require 'ws_client'
+require 'ws_lite'
 
-ws = WSClient.connect 'ws://example.com:8888'
+ws = WSLite.connect 'ws://example.com:8888'
 
 ws.on :message do |msg|
   puts msg.data
@@ -43,7 +43,7 @@ end
 `connect` runs a given block before connecting websocket
 
 ```ruby
-WSClient.connect 'ws://example.com:8888' do |ws|
+WSLite.connect 'ws://example.com:8888' do |ws|
   ws.on :open do
     puts "connect!"
   end
@@ -62,7 +62,7 @@ Pass a custom `OpenSSL::SSL::SSLContext` for full control over TLS settings:
 ctx = OpenSSL::SSL::SSLContext.new
 ctx.verify_mode = OpenSSL::SSL::VERIFY_PEER
 
-ws = WSClient.connect 'wss://example.com', ssl_context: ctx
+ws = WSLite.connect 'wss://example.com', ssl_context: ctx
 ```
 
 By default, `OP_IGNORE_UNEXPECTED_EOF` is enabled on OpenSSL 3.x to prevent `SSL_read: unexpected eof while reading` errors when servers close connections without a TLS `close_notify` alert.
@@ -70,7 +70,7 @@ By default, `OP_IGNORE_UNEXPECTED_EOF` is enabled on OpenSSL 3.x to prevent `SSL
 
 Sample
 ------
-[websocket chat](https://github.com/carter2099/ws-client/tree/master/sample)
+[websocket chat](https://github.com/carter2099/ws_lite/tree/master/sample)
 
 
 Test

@@ -28,7 +28,7 @@ Metrics/ClassLength:
 
 Metrics/BlockLength:
   Exclude:
-    - 'lib/ws_client/client.rb'
+    - 'lib/ws_lite/client.rb'
     - '*.gemspec'
 
 Gemspec/DevelopmentDependencies:
@@ -37,20 +37,20 @@ Gemspec/DevelopmentDependencies:
 # The connect method is inherently complex (socket, SSL, handshake, read thread)
 Metrics/AbcSize:
   Exclude:
-    - 'lib/ws_client/client.rb'
+    - 'lib/ws_lite/client.rb'
 
 Metrics/CyclomaticComplexity:
   Exclude:
-    - 'lib/ws_client/client.rb'
+    - 'lib/ws_lite/client.rb'
 
 Metrics/PerceivedComplexity:
   Exclude:
-    - 'lib/ws_client/client.rb'
+    - 'lib/ws_lite/client.rb'
 
 # The two rescue branches for EPIPE and SSLError intentionally do the same thing
 Lint/DuplicateBranch:
   Exclude:
-    - 'lib/ws_client/client.rb'
+    - 'lib/ws_lite/client.rb'
 
 Layout/LineLength:
   Max: 120
