@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1
+
+* Support Ruby 3.3.x through 4.0.x
+
 ## 1.0.0
 
 * Update metadata
